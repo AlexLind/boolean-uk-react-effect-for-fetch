@@ -2,15 +2,13 @@ import UsersList from './components/UsersList';
 import { useEffect, useState } from "react";
 
 function UsersSection() {
-  let url = "https://randomuser.me/api/?results=5";
-
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch(url)
+    fetch("https://randomuser.me/api/?results=5")
       .then((res) => res.json())
       .then((data) => setUsers(data.results));
-  }, [url]);
+  }, []);
 
   return (
     <section>
