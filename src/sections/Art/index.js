@@ -8,7 +8,7 @@ function ArtsSection() {
     fetch("https://api.artic.edu/api/v1/artworks?page=500&limit=5")
       .then((res) => res.json())
       .then((data) => setArtData(data.data));
-  });
+  }, []);
 
   return (
     <section>
